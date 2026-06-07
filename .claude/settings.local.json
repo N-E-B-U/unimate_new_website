@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:unimate.ge)",
+      "Bash(npm run *)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(Copy-Item *)",
+      "PowerShell(New-Item *)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing | Select-Object StatusCode, StatusDescription)",
+      "PowerShell(\\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing\\).Content | Select-String -Pattern \"Download|Coming Soon|unimate-exchange\" | Select-Object -First 5)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl *)",
+      "PowerShell(winget *)",
+      "PowerShell(gh *)",
+      "PowerShell(gh auth *)",
+      "Bash(npx tsc *)",
+      "Bash(Start-Sleep -Seconds 5)",
+      "Bash(Get-Content \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-user-OneDrive-Desktop-Unimate\\\\d2146dcb-8135-4e69-816f-560e165f3fdb\\\\tasks\\\\bwwc4jk8r.output\" -Tail 20)",
+      "WebSearch",
+      "PowerShell(node -e \"const { chromium } = require\\('playwright'\\); \\(async \\(\\) => { const b = await chromium.launch\\(\\); const p = await b.newPage\\(\\); await p.goto\\('http://localhost:3000/about-us'\\); await p.waitForLoadState\\('networkidle'\\); const section = await p.locator\\('section:has\\(h2:text\\(\\\\\"Partners\\\\\"\\)\\)'\\); await section.scrollIntoViewIfNeeded\\(\\); await p.waitForTimeout\\(1000\\); await section.screenshot\\({ path: 'C:/Users/user/AppData/Local/Temp/partners-section.png' }\\); await b.close\\(\\); console.log\\('done'\\); }\\)\\(\\).catch\\(e => { console.error\\(e.message\\); process.exit\\(1\\); }\\);\")",
+      "Bash(Remove-Item *)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git add *)"
+    ]
+  }
+}
