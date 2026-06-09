@@ -3,7 +3,7 @@ import { ScrollToSection } from '@/components/ui/ScrollToSection'
 
 export function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden brand-gradient snap-start min-h-screen flex flex-col justify-center">
+    <section id="hero" className="relative w-full overflow-hidden brand-gradient snap-start min-h-screen flex flex-col justify-center">
       {/* Decorative background — node/circle motif echoing the logo */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-10">
         <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full border-[40px] border-white" />
