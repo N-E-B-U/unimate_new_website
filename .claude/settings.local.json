@@ -26,7 +26,14 @@
       "Bash(git push *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(where node *)",
+      "Bash(node -e \"console.log\\('node ok'\\)\")",
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "Bash(Copy-Item *)"
     ]
   }
 }

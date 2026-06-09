@@ -2,15 +2,15 @@ import Image from 'next/image'
 
 export function DownloadAppSection() {
   return (
-    <section className="relative w-full overflow-hidden snap-start min-h-screen flex items-center bg-white">
+    <section className="relative w-full snap-start min-h-screen flex items-center bg-white overflow-hidden">
 
-      {/* ── Content grid ─────────────────────────────────────────── */}
-      <div className="relative mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-10">
 
-          {/* ── LEFT — text + store buttons ──────────────────────── */}
-          <div className="flex flex-col items-start">
-            {/* Eyebrow label */}
+          {/* ── Left: text block ──────────────────────────────── */}
+          <div className="flex flex-col items-start shrink-0">
+
+            {/* Eyebrow */}
             <span className="inline-flex items-center gap-2 mb-5">
               <span className="h-px w-8 bg-brand-magenta" />
               <span className="text-brand-magenta text-xs font-bold tracking-[0.2em] uppercase">
@@ -18,14 +18,14 @@ export function DownloadAppSection() {
               </span>
             </span>
 
-            {/* Main heading */}
+            {/* Heading */}
             <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-black leading-none mb-5">
               Download
               <br />
               <span className="brand-gradient-text">the App</span>
             </h2>
 
-            {/* Coming Soon badge */}
+            {/* Coming Soon */}
             <div className="mb-10 flex items-center gap-3">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-magenta opacity-60" />
@@ -38,11 +38,12 @@ export function DownloadAppSection() {
 
             {/* Store buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
+
               {/* App Store */}
               <button
                 disabled
                 aria-label="Download on the App Store — Coming Soon"
-                className="relative flex items-center gap-3.5 rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 transition-all duration-300 cursor-not-allowed opacity-70"
+                className="relative flex items-center gap-3.5 rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 cursor-not-allowed opacity-70"
               >
                 <svg viewBox="0 0 24 24" className="h-8 w-8 fill-black shrink-0" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -60,7 +61,7 @@ export function DownloadAppSection() {
               <button
                 disabled
                 aria-label="Get it on Google Play — Coming Soon"
-                className="relative flex items-center gap-3.5 rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 transition-all duration-300 cursor-not-allowed opacity-70"
+                className="relative flex items-center gap-3.5 rounded-2xl border border-gray-200 bg-gray-50 px-6 py-4 cursor-not-allowed opacity-70"
               >
                 <svg viewBox="0 0 24 24" className="h-8 w-8 shrink-0" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -96,23 +97,24 @@ export function DownloadAppSection() {
               </button>
             </div>
 
-            {/* Fine-print note */}
+            {/* Fine print */}
             <p className="mt-6 text-gray-400 text-xs font-bold">
               Available on iOS and Android · Notify me when it&apos;s live
             </p>
           </div>
 
-          {/* ── RIGHT — app image ─────────────────────────────────── */}
-          <div className="relative flex justify-center lg:justify-end">
+          {/* ── Right: phones — massively enlarged, dominant hero ── */}
+          <div className="flex-1 flex items-center justify-start min-w-0">
             <Image
-              src="/unimate-exchange.png"
-              alt="Unimate app preview — Exchange feature"
-              width={480}
-              height={560}
-              className="w-full h-auto max-w-[340px] sm:max-w-[400px] lg:max-w-[480px] object-contain select-none drop-shadow-xl"
+              src="/app-mockup.png"
+              alt="Unimate mobile app preview"
+              width={900}
+              height={1170}
+              className="h-[52vh] sm:h-[65vh] lg:h-[82vh] xl:h-[88vh] w-auto object-contain"
               priority
             />
           </div>
+
         </div>
       </div>
     </section>
