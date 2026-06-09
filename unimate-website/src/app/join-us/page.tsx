@@ -16,7 +16,7 @@ export default function JoinUsPage() {
             Join Unimate
           </h1>
           <p className="text-center text-gray-600 font-bold mb-10">
-            Enter your details below and we&apos;ll get you started.
+            Enter your email and we&apos;ll send you an invitation.
           </p>
           <JoinForm />
         </div>

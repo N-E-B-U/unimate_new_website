@@ -39,51 +39,13 @@ export function JoinForm() {
     }
   }
 
-  const inputClass =
-    'w-full rounded-lg border border-gray-300 px-4 py-3 text-base font-bold text-black placeholder:font-normal placeholder:text-gray-400 transition focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent'
-
-  const labelClass = 'block text-sm font-bold text-gray-700 mb-1'
-
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <input type="hidden" name="_subject" value="New Join Us submission" />
 
-      {/* Name */}
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="join-firstName" className={labelClass}>
-            First Name <span aria-hidden="true" className="text-brand-magenta">*</span>
-          </label>
-          <input
-            id="join-firstName"
-            name="firstName"
-            type="text"
-            autoComplete="given-name"
-            required
-            placeholder="First name"
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="join-lastName" className={labelClass}>
-            Last Name <span aria-hidden="true" className="text-brand-magenta">*</span>
-          </label>
-          <input
-            id="join-lastName"
-            name="lastName"
-            type="text"
-            autoComplete="family-name"
-            required
-            placeholder="Last name"
-            className={inputClass}
-          />
-        </div>
-      </div>
-
-      {/* University Email */}
       <div>
-        <label htmlFor="join-email" className={labelClass}>
-          University Email <span aria-hidden="true" className="text-brand-magenta">*</span>
+        <label htmlFor="join-email" className="block text-sm font-bold text-gray-700 mb-1">
+          Email <span aria-hidden="true" className="text-brand-magenta">*</span>
         </label>
         <input
           id="join-email"
@@ -91,33 +53,17 @@ export function JoinForm() {
           type="email"
           autoComplete="email"
           required
-          placeholder="your@university.edu"
-          className={inputClass}
+          placeholder="your@email.com"
+          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base font-bold text-black placeholder:font-normal placeholder:text-gray-400 transition focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent"
         />
       </div>
 
-      {/* University */}
-      <div>
-        <label htmlFor="join-university" className={labelClass}>
-          University <span aria-hidden="true" className="text-brand-magenta">*</span>
-        </label>
-        <input
-          id="join-university"
-          name="university"
-          type="text"
-          required
-          placeholder="Your university name"
-          className={inputClass}
-        />
-      </div>
-
-      {/* Submit */}
       <button
         type="submit"
         disabled={status === 'submitting'}
         className="w-full rounded-full brand-gradient py-3 px-8 text-base font-bold text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {status === 'submitting' ? 'Submitting…' : 'Submit'}
+        {status === 'submitting' ? 'Submitting…' : 'Send'}
       </button>
 
       {status === 'success' && (
@@ -126,7 +72,7 @@ export function JoinForm() {
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><path d="m9 11 3 3L22 4" />
           </svg>
           <p className="text-sm font-bold">
-            Thank you for joining! We&apos;ll be in touch soon.
+            We&apos;ll send you an invitation soon. Check your inbox!
           </p>
         </div>
       )}

@@ -51,7 +51,7 @@ export function MainFunctionsSection() {
         </div>
 
         {/* ── Cards ───────────────────────────────────────────────── */}
-        <div className="grid gap-3 sm:gap-4 sm:grid-cols-3">
+        <div className="grid gap-10 sm:gap-14 sm:grid-cols-3">
           {FEATURES.map((f) => (
             <div
               key={f.title}

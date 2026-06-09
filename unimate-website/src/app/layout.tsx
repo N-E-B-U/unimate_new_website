@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={anton.variable} suppressHydrationWarning>
-      <body className="flex min-h-screen flex-col antialiased">
+      <body className="flex min-h-screen flex-col antialiased" suppressHydrationWarning>
         {/* Skip-to-content for keyboard / screen-reader users */}
         <a
           href="#main-content"

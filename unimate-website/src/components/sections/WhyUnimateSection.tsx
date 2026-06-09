@@ -29,7 +29,7 @@ export function WhyUnimateSection() {
         </div>
 
         {/* ── Cards ───────────────────────────────────────────────── */}
-        <div className="grid gap-5 md:gap-6 md:grid-cols-3">
+        <div className="grid gap-10 md:gap-14 md:grid-cols-3">
           {REASONS.map((r) => (
             <div
               key={r.title}
