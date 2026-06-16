@@ -33,7 +33,9 @@
       "Bash(node -e \"console.log\\('node ok'\\)\")",
       "Bash(node *)",
       "Bash(npm install *)",
-      "Bash(Copy-Item *)"
+      "Bash(Copy-Item *)",
+      "Bash(git pull *)",
+      "Bash(git rm *)"
     ]
   }
 }

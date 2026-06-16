@@ -12,21 +12,21 @@ export function ContactForm() {
     setStatus('submitting')
 
     const form = e.currentTarget
-    const data = new FormData(form)
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
+    const getValue = (name: string) =>
+      (form.elements.namedItem(name) as HTMLInputElement | null)?.value ?? ''
 
-    if (!formspreeId || formspreeId === 'your_formspree_form_id_here') {
-      await new Promise((r) => setTimeout(r, 800))
-      setStatus('success')
-      form.reset()
-      return
-    }
+    const firstName = getValue('firstName')
+    const lastName = getValue('lastName')
+    const name = [firstName, lastName].filter(Boolean).join(' ')
+    const phone = getValue('phone')
+    const email = getValue('email')
+    const message = getValue('message')
 
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, message }),
       })
       if (res.ok) {
         setStatus('success')

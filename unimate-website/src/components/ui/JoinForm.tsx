@@ -12,21 +12,13 @@ export function JoinForm() {
     setStatus('submitting')
 
     const form = e.currentTarget
-    const data = new FormData(form)
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
-
-    if (!formspreeId || formspreeId === 'your_formspree_form_id_here') {
-      await new Promise((r) => setTimeout(r, 800))
-      setStatus('success')
-      form.reset()
-      return
-    }
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value
 
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch('/api/join', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       })
       if (res.ok) {
         setStatus('success')
@@ -41,8 +33,6 @@ export function JoinForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
-      <input type="hidden" name="_subject" value="New Join Us submission" />
-
       <div>
         <label htmlFor="join-email" className="block text-sm font-bold text-gray-700 mb-1">
           Email <span aria-hidden="true" className="text-brand-magenta">*</span>
