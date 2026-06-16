@@ -6,10 +6,12 @@ type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export function JoinForm() {
   const [status, setStatus] = useState<Status>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('submitting')
+    setErrorMsg('')
 
     const form = e.currentTarget
     const email = (form.elements.namedItem('email') as HTMLInputElement).value
@@ -24,6 +26,8 @@ export function JoinForm() {
         setStatus('success')
         form.reset()
       } else {
+        const data = await res.json().catch(() => ({}))
+        setErrorMsg(data.error ?? '')
         setStatus('error')
       }
     } catch {
@@ -74,7 +78,8 @@ export function JoinForm() {
           </svg>
           <div className="text-sm">
             <p className="font-bold">Something went wrong.</p>
-            <p>Please try again or email us at{' '}
+            {errorMsg && <p className="mt-1 font-mono text-xs break-all">{errorMsg}</p>}
+            <p className="mt-1">Please try again or email us at{' '}
               <a href="mailto:[email protected]" className="underline hover:no-underline">[email protected]</a>
             </p>
           </div>
