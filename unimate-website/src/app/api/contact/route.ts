@@ -24,6 +24,7 @@ export async function POST(req: NextRequest) {
   })
 
   if (error) {
+    console.error('[/api/contact] Resend error:', error)
     return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 })
   }
 
