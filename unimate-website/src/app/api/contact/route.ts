@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   const { error } = await resend.emails.send({
     from: 'onboarding@resend.dev',
-    to: 'info@unimate.ge',
+    to: 'levan.nebulishvili.1@gmail.com',
     subject: 'New Contact Message',
     text: body,
   })
